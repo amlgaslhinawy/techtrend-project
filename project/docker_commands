@@ -1,0 +1,31 @@
+## Docker commands used to build the application 
+# TODO: insert the docker build command
+
+## Docker commands used to run the application
+docker run-d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs 9b97da2f5926
+
+## Logs from the container running the TechTrends application
+2023-01-26 18:00:45  * Serving Flask app 'app' (lazy loading)
+2023-01-26 18:00:45  * Environment: production
+2023-01-26 18:00:45    WARNING: This is a development server. Do not use it in a production deployment.
+2023-01-26 18:00:45    Use a production WSGI server instead.
+2023-01-26 18:00:45  * Debug mode: on
+2023-01-26 18:00:45 WARNING:werkzeug: * Running on all addresses.
+2023-01-26 18:00:45    WARNING: This is a development server. Do not use it in a production deployment.
+2023-01-26 18:00:45 INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2023-01-26 18:00:45 INFO:werkzeug: * Restarting with stat
+2023-01-26 18:00:46 WARNING:werkzeug: * Debugger is active!
+2023-01-26 18:00:46 INFO:werkzeug: * Debugger PIN: 120-555-543
+2023-01-26 18:06:40 INFO:app:retrieved
+2023-01-26 18:06:40 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:06:40] "GET / HTTP/1.1" 200 -
+2023-01-26 18:06:40 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:06:40] "GET /static/css/main.css HTTP/1.1" 200 -
+2023-01-26 18:06:40 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:06:40] "GET /favicon.ico HTTP/1.1" 404 -
+2023-01-26 18:06:43 INFO:app:retrieved
+2023-01-26 18:06:43 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:06:43] "GET / HTTP/1.1" 200 -
+2023-01-26 18:06:43 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:06:43] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-01-26 18:07:15 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:07:15] "GET /healthz HTTP/1.1" 200 -
+2023-01-26 18:07:24 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:07:24] "GET /metrics HTTP/1.1" 200 -
+2023-01-26 18:08:31 INFO:werkzeug:172.17.0.1 - - [26/Jan/2023 16:08:31] "GET /metrics HTTP/1.1" 200 -
