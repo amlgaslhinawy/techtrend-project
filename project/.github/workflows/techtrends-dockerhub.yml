@@ -2,7 +2,7 @@ name: Techtrend - Package With Dockerhub
 
 on:
   push:
-    branches: ['master']
+    branches: ['main']
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
