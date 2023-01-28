@@ -66,5 +66,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: techtrend-project/techtrends:latest
+          tags: techtrend-project/project/techtrends:latest
 
