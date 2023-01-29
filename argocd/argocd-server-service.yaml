@@ -1,0 +1,11 @@
+namespace: argocd
+spec:
+  ports:
+  - port: 80
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  - name: https
+    protocol: TCP
+    port: 443
