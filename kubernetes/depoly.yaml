@@ -16,7 +16,7 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: 78013615/techtrends
+      - image: amlgalshinawy/techtrend-project:techtrends
         imagePullPolicy: IfNotPresent
         name: techtrends
         ports:
