@@ -10,8 +10,7 @@ spec:
   project: default
   source:
     helm:
-      valueFiles:
-      - values-staging.yaml
+      valueFiles: values-staging.yaml
     path: helm
     repoURL: https://github.com/amlgalshinawy/techtrend-project
     targetRevision: HEAD
