@@ -1,0 +1,8 @@
+
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-01-29T13:03:44Z"
+  name: techtrend
+  namespace: sandbox
+  resourceVersion: "875"
+  uid: e20a2f1c-1750-4373-99c7-2574c13aeb56
