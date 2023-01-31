@@ -8,9 +8,9 @@ service:
   type: ClusterIP
 
 image:
-  repository: hwdgrmy/techtrends
+  repository: amlgalshinawy/techtrend-project
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 replicaCount: 5
 
