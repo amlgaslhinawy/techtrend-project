@@ -93,6 +93,8 @@ def create():
 # start the application on port 3111
 if __name__ == "__main__":
 
-   logging.basicConfig(level=logging.DEBUG, handlers=[logging.FileHandler("app.log"), logging.StreamHandler(sys.stdout)])
-
+stdout_handler =  logging.StreamHandler(sys.stdout)
+    stderr_handler =  logging.StreamHandler(sys.stderr)
+    handlers = [stderr_handler, stdout_handler]
+    logging.basicConfig(level=logging.DEBUG, handlers=handlers)
    app.run(host='0.0.0.0', port='3111')
