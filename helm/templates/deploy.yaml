@@ -4,17 +4,12 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: {{ .Values.namespace.name }} 
+  namespace: {{ .Values.namespace.name }}
 spec:
-  replicas: {{ .Values.replicaCount }} 
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: techtrends
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -25,27 +20,24 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         ports:
-            - containerPort: {{ .Values.containerPort }}
-              protocol: {{ .Values.service.protocol }}
+        - containerPort: {{ .Values.containerPort }}
+        resources: 
+{{ toYaml .Values.resources | indent 12 }}  
         livenessProbe:
-           httpGet:
-             path: {{ .Values.livenessProbePath }}
-             port: {{ .Values.containerPort }}
+          httpGet:
+            path: {{ .Values.livenessProbe.path }}
+            port: 3111
+            httpHeaders:
+            - name: Custom-Header
+              value: Status
+          initialDelaySeconds: 10
+          periodSeconds: 10
         readinessProbe:
-           httpGet:
-             path: {{ .Values.readinessProbePath }}
-             port: {{ .Values.containerPort }}
-        resources:
-          requests:
-            cpu: {{ .Values.resources.requests.cpu }}
-            memory: {{ .Values.resources.requests.memory }}
-          limits:
-            cpu: {{ .Values.resources.limits.cpu }}
-            memory: {{ .Values.resources.limits.memory }}
+          httpGet:
             path: {{ .Values.readinessProbe.path }}
             port: 3111
             httpHeaders:
             - name: Custom-Header
               value: Status
           initialDelaySeconds: 10
-          periodSeconds: 10                          
+          periodSeconds: 10 
