@@ -26,7 +26,7 @@ spec:
         livenessProbe:
           httpGet:
             path: {{ .Values.livenessProbe.path }}
-            port: 3111
+            port: {{ .Values.livenessProbe.path }}
             httpHeaders:
             - name: Custom-Header
               value: Status
@@ -35,7 +35,7 @@ spec:
         readinessProbe:
           httpGet:
             path: {{ .Values.readinessProbe.path }}
-            port: 3111
+            port: {{ .Values.readinessProbe.path }}
             httpHeaders:
             - name: Custom-Header
               value: Status
